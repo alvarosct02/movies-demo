@@ -16,14 +16,9 @@ class ItemSeparatorDecoration(
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        val position: Int = parent.getChildAdapterPosition(view)
-        val isLastItem = parent.adapter?.let { it.itemCount - 1 == position } ?: false
-
         (parent.layoutManager as? LinearLayoutManager)?.let {
             if (it.orientation == LinearLayoutManager.HORIZONTAL) {
-                if (!isLastItem) {
-                    outRect.right = middleSpacePx
-                }
+                outRect.right = middleSpacePx
             }
         }
     }

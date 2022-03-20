@@ -9,7 +9,7 @@ import com.alvarosct02.moviesdemo.databinding.ItemMovieBinding
 import com.alvarosct02.moviesdemo.models.Movie
 
 class MovieAdapter :
-    ListAdapter<Movie, MovieAdapterViewHolder>(NoDiffCallback()) {
+    ListAdapter<Movie, MovieAdapterViewHolder>(MovieDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieAdapterViewHolder {
         return MovieAdapterViewHolder.from(parent)
@@ -21,13 +21,13 @@ class MovieAdapter :
 
 }
 
-class NoDiffCallback<T> : DiffUtil.ItemCallback<T>() {
-    override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
-        return true
+class MovieDiffCallback : DiffUtil.ItemCallback<Movie>() {
+    override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
-        return true
+    override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        return oldItem == newItem
     }
 }
 

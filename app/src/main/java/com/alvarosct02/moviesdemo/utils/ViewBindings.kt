@@ -25,6 +25,6 @@ fun ImageView.loadImage(url: String?) {
 @BindingAdapter("app:items")
 fun <T> RecyclerView.setItems(items: List<T>?) {
     items?.let {
-        (this.adapter as? ListAdapter<T, *>)?.submitList(items)
+        (this.adapter as? ListAdapter<T, *>)?.submitList(items.toList())
     }
 }

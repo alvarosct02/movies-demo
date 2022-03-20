@@ -30,6 +30,7 @@ android {
         debug {
             buildConfigField "String", "BASE_URL", "$project.API_BASE_URL"
             buildConfigField "String", "API_TOKEN", "$project.API_TOKEN"
+            buildConfigField "String", "DATABASE_NAME", "$project.DATABASE_NAME"
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

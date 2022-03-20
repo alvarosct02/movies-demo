@@ -11,6 +11,7 @@ interface MovieServiceV3 {
     @GET("search/tv")
     suspend fun searchTv(
         @Query("query") query: String,
+        @Query("page") page: Int,
     ): PagedResponse<TvObjectResponse>
 
     @GET("tv/popular")
@@ -26,6 +27,7 @@ interface MovieServiceV3 {
     @GET("search/movie")
     suspend fun searchMovie(
         @Query("query") query: String,
+        @Query("page") page: Int,
     ): PagedResponse<MovieObjectResponse>
 
     @GET("movie/popular")
