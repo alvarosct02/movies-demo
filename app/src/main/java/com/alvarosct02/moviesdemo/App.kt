@@ -2,6 +2,7 @@ package com.alvarosct02.moviesdemo
 
 import android.app.Application
 import com.alvarosct02.moviesdemo.di.repositoriesModule
+import com.alvarosct02.moviesdemo.di.viewModelsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +13,8 @@ class App : Application() {
         startKoin {
             androidContext(this@App)
             modules(
-                repositoriesModule
+                repositoriesModule,
+                viewModelsModule
             )
 
         }
