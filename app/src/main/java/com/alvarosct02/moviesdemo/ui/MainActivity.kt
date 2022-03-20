@@ -1,7 +1,8 @@
-package com.alvarosct02.moviesdemo
+package com.alvarosct02.moviesdemo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.alvarosct02.moviesdemo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
